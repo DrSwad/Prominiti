@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/signup"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:id="@+id/login_logo"
+        android:layout_marginTop="90dp"
+        />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_sign_in"
+        android:text="@string/sign_in"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:fontFamily="@font/primetime"
+        android:layout_below="@id/login_logo"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/peach_puff"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:boxBackgroundMode="filled"
+        android:hint= "Username/Email"
+        app:hintTextColor="@color/black"
+        android:layout_below="@+id/login_sign_in"
+        app:boxCornerRadiusBottomEnd="25dp"
+        app:boxCornerRadiusBottomStart="25dp"
+        app:boxCornerRadiusTopEnd="25dp"
+        app:boxCornerRadiusTopStart="25dp"
+        app:startIconDrawable="@drawable/ic_icon_user"
+        android:id="@+id/login_username_email"
+        app:boxBackgroundColor="@color/peach_puff">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:id="@+id/email_username_editText"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:boxBackgroundMode="filled"
+        app:hintTextColor="@color/black"
+        app:startIconDrawable="@drawable/ic_outline_lock_24"
+        android:hint="@string/password"
+        android:layout_below="@+id/login_username_email"
+        android:id="@+id/login_password"
+        app:endIconMode="password_toggle"
+        app:boxCornerRadiusBottomEnd="25dp"
+        app:boxCornerRadiusBottomStart="25dp"
+        app:boxCornerRadiusTopEnd="25dp"
+        app:boxCornerRadiusTopStart="25dp"
+        app:boxBackgroundColor="@color/peach_puff">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/password_editText"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:textStyle="bold"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_button"
+        android:layout_below="@id/login_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/login"
+        app:icon="@drawable/ic_baseline_login_24"
+        app:iconGravity="textEnd"
+        app:cornerRadius="20dp"
+        android:background="@drawable/gradient"
+        app:backgroundTint="@null"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_register_text"
+        android:layout_below="@id/login_button"
+        android:layout_marginTop="50dp"
+        android:text="Don't have an account?"
+        android:fontFamily="@font/primetime"
+        android:textSize="20sp"
+        android:textColor="@color/peach_puff"
+        android:gravity="center"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_signup"
+        android:layout_below="@id/login_register_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:text="@string/signup_underline"
+        android:fontFamily="@font/primetime"
+        android:textColor="#1e130c"
+        android:textSize="25sp"
+        style="@style/Widget.Material3.Button.TextButton"/>
+
+
+
+</RelativeLayout>
