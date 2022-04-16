@@ -22,6 +22,8 @@ class FavoriteUsers : AppCompatActivity() {
         customAdapter = FavoriteUserAdapter()
         recyclerView.adapter = customAdapter
 
+        addButton = findViewById(R.id.add_button)
+
         addButton.setOnClickListener{
             //This functionality has to be done from the server
         }
