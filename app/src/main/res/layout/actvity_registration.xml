@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/signup"
+    android:background="@drawable/background3"
     tools:context=".Login">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:fontFamily="@font/primetime"
         android:layout_below="@id/signup_logo"
         android:layout_marginTop="10dp"
-        android:textColor="@color/peach_puff"
+        android:textColor="@color/black"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -45,7 +45,7 @@
         app:boxCornerRadiusTopStart="25dp"
         app:startIconDrawable="@drawable/ic_baseline_person_outline_24"
         android:id="@+id/signup_name"
-        app:boxBackgroundColor="@color/peach_puff">
+        app:boxBackgroundColor="@color/Pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
         app:boxCornerRadiusTopStart="25dp"
         app:startIconDrawable="@drawable/ic_baseline_person_pin_24"
         android:id="@+id/signup_username"
-        app:boxBackgroundColor="@color/peach_puff">
+        app:boxBackgroundColor="@color/Pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -105,7 +105,7 @@
         app:boxCornerRadiusTopStart="25dp"
         app:startIconDrawable="@drawable/ic_outline_email_24"
         android:id="@+id/signup_email"
-        app:boxBackgroundColor="@color/peach_puff">
+        app:boxBackgroundColor="@color/Pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -136,7 +136,7 @@
         app:boxCornerRadiusBottomStart="25dp"
         app:boxCornerRadiusTopEnd="25dp"
         app:boxCornerRadiusTopStart="25dp"
-        app:boxBackgroundColor="@color/peach_puff">
+        app:boxBackgroundColor="@color/Pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -167,7 +167,7 @@
         app:boxCornerRadiusBottomStart="25dp"
         app:boxCornerRadiusTopEnd="25dp"
         app:boxCornerRadiusTopStart="25dp"
-        app:boxBackgroundColor="@color/peach_puff">
+        app:boxBackgroundColor="@color/Pink">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

@@ -41,7 +41,7 @@ class Login : AppCompatActivity()  {
 
         //This code is just for testing purposes
         logoImage.setOnClickListener{
-            val intent = Intent(this, FavoriteUsers::class.java)
+            val intent = Intent(this, UserProfile::class.java)
             startActivity(intent)
             finish()
         }

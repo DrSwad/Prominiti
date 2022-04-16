@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background_image"
+    android:background="@drawable/background3"
     tools:context=".UserProfile">
     
     <de.hdodenhof.circleimageview.CircleImageView
@@ -22,7 +22,6 @@
         android:id="@+id/profile_name"
         android:layout_below="@id/profileImage"
         android:layout_centerHorizontal="true"
-        android:text="Farhan Mahmud"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="35sp"/>
@@ -46,7 +45,6 @@
         android:textColor="@color/black"
         android:layout_marginStart="10dp"
         android:layout_toRightOf="@id/profile_username_logo"
-        android:text="farhan2021"
         android:fontFamily="@font/aller_bd"
         android:id="@+id/profile_username"
         android:textSize="25sp"/>
@@ -70,7 +68,6 @@
         android:layout_toRightOf="@id/profile_email_logo"
         android:textColor="@color/black"
         android:layout_marginStart="10dp"
-        android:text="mahmud.farhan1903@gmail.com"
         android:fontFamily="@font/aller_bd"
         android:id="@+id/profile_email"
         android:textSize="20sp"/>

@@ -14,6 +14,10 @@ class UserProfile : AppCompatActivity() {
     private lateinit var profileUsername: MaterialTextView
     private lateinit var profileEmail: MaterialTextView
 
+    private lateinit var name: String
+    private lateinit var username: String
+    private lateinit var email: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
@@ -29,7 +33,7 @@ class UserProfile : AppCompatActivity() {
 
         //logout functionality
         logoutButton.setOnClickListener{
-
+            logout()
         }
 
         favoriteUserButton.setOnClickListener {
@@ -37,5 +41,24 @@ class UserProfile : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    public fun getName(): String {
+        name = profileName.text.toString()
+        return name
+    }
+
+    public fun getUsername(): String {
+        username = profileUsername.text.toString()
+        return username
+    }
+
+    public fun getEmail(): String {
+        email = profileEmail.text.toString()
+        return email
+    }
+
+    public fun logout() {
+        // This function is to be implemented by the server
     }
 }
