@@ -2,7 +2,7 @@ package com.example.prominiti
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -13,6 +13,7 @@ class Login : AppCompatActivity()  {
     private lateinit var loginButton: MaterialButton
     private lateinit var emailUsernameField: TextInputEditText
     private lateinit var passwordField: TextInputEditText
+    private lateinit var logoImage: ImageView
 
     //Class Attributes
     private lateinit var emailOrUsername: String
@@ -26,30 +27,48 @@ class Login : AppCompatActivity()  {
         loginButton = findViewById(R.id.login_button)
         emailUsernameField = findViewById(R.id.email_username_editText)
         passwordField = findViewById(R.id.password_editText)
+        logoImage = findViewById(R.id.login_logo)
 
         signupButton.setOnClickListener {
-            val intent: Intent = Intent(this, FavoriteUsers::class.java)
+            val intent = Intent(this, Registration::class.java)
             startActivity(intent)
             finish()
         }
 
         loginButton.setOnClickListener{
-            getPassword()
+           login()
         }
+
+        //This code is just for testing purposes
+        logoImage.setOnClickListener{
+            val intent = Intent(this, FavoriteUsers::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     public fun getEmailOrUserName():String {
-        emailOrUsername = emailUsernameField.text.toString()
         return emailOrUsername
     }
 
+    public fun setEmailOrUsername(_emailOrUsername: String) {
+        emailOrUsername = _emailOrUsername
+    }
+
     public fun getPassword(): String {
-        password = passwordField.text.toString()
-        Toast.makeText(this, password, Toast.LENGTH_SHORT).show()
         return password
+    }
+
+    public fun setPassword(_password: String) {
+       password = _password
     }
 
     public fun login() {
         //This is a function for the server and login
+        setEmailOrUsername(emailUsernameField.text.toString())
+        setPassword(passwordField.text.toString())
+
+        //The rest is to be coded here
     }
 }

@@ -35,41 +35,60 @@ class Registration: AppCompatActivity() {
         confirmPasswordField = findViewById(R.id.confirmPassword_editText)
 
         regButton.setOnClickListener{
-            getUsername()
+            register()
         }
 
     }
 
     public fun getName(): String {
-        name = nameField.text.toString()
         return name
     }
 
+    public fun setName(_name: String){
+        name = _name
+    }
+
     public fun getUsername(): String {
-        username = usernameField.text.toString()
-        Toast.makeText(this, username, Toast.LENGTH_SHORT).show()
         return username
     }
 
+    public fun setUsername(_username: String){
+        username = _username
+    }
+
     public fun getEmail(): String {
-        email = emailField.text.toString()
-        Toast.makeText(this, email, Toast.LENGTH_SHORT).show()
         return email
     }
 
+    public fun setEmail(_email: String) {
+        email = _email
+    }
+
     public fun getPassword(): String {
-        password = passwordField.text.toString()
-        Toast.makeText(this, password, Toast.LENGTH_SHORT).show()
         return password
     }
 
+    public fun setPassword(_password: String) {
+        password = _password
+    }
+
     public fun getConfirmPassword(): String {
-        confirmPassword = nameField.text.toString()
-        Toast.makeText(this, confirmPassword, Toast.LENGTH_SHORT).show()
         return confirmPassword
+    }
+
+    public fun setConfirmPassword(_confirmPassword: String){
+        confirmPassword = _confirmPassword
     }
 
     public fun register(){
         //This is a function for the server and registration
+        setName(nameField.text.toString())
+        setUsername(usernameField.text.toString())
+        setEmail(emailField.text.toString())
+        setPassword(passwordField.text.toString())
+        setConfirmPassword(confirmPasswordField.text.toString())
+
+        //The rest is to be coded here
+
     }
 }

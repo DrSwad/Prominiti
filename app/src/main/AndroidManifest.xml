@@ -9,22 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prominiti">
-        <activity android:name=".UserProfile"></activity>
-        <activity
-            android:name=".Login"
+        <activity android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".UserProfile" />
+        <activity
+            android:name=".Login"
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".Registration"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FavoriteUsers"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

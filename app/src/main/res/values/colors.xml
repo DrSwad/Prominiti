@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="peach_puff">#ffdab9</color>
     <color name="test">#3c1053</color>
+    <color name="dimgrey">#696969</color>
+    <color name="snow3">#cdc9c9</color>
 </resources>

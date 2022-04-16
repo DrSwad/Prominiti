@@ -66,18 +66,13 @@ class FavoriteUserAdapter: RecyclerView.Adapter<FavoriteUserAdapter.ViewHolder>(
             copyImage = itemView.findViewById(R.id.usernameCopy)
             deleteImage = itemView.findViewById(R.id.userDelete)
 
-            copyImage.setOnClickListener {
-//                val position: Int = adapterPosition
-//                val clipboard:ClipboardManager =
-            }
+            copyImage.setOnClickListener(View.OnClickListener {
+//                val clipboard: ClipboardManager = it
+            })
 
             deleteImage.setOnClickListener {
                 val position: Int = adapterPosition
-                names.removeAt(position)
-                usernames.removeAt(position)
-                personImages.removeAt(position)
-                copyImages.removeAt(position)
-                deleteImages.removeAt(position)
+                //Data has to be deleted from the database via server
             }
         }
     }

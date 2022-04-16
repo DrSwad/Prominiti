@@ -4,52 +4,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient3"
+    android:background="@drawable/background_image"
     tools:context=".UserProfile">
     
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="70dp"
         android:id="@+id/profileImage"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_baseline_person_24">
-    </ImageView>
+        android:src="@drawable/profile2">
+    </de.hdodenhof.circleimageview.CircleImageView>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profileImage"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/peach_puff"
-        android:layout_marginStart="20dp"
-        android:text="Name: Farhan Mahmud"
-        android:fontFamily="@font/aller_bd"
         android:id="@+id/profile_name"
-        android:textSize="25sp"/>
+        android:layout_below="@id/profileImage"
+        android:layout_centerHorizontal="true"
+        android:text="Farhan Mahmud"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="35sp"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/profile_name"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/profile_username_logo"
+        android:src="@drawable/ic_username_logo"
+        />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/profile_name"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="45dp"
         android:textColor="@color/black"
-        android:layout_marginStart="20dp"
-        android:text="Username: farhan2021"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/profile_username_logo"
+        android:text="farhan2021"
         android:fontFamily="@font/aller_bd"
         android:id="@+id/profile_username"
         android:textSize="25sp"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/profile_username_logo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/profile_email_logo"
+        android:src="@drawable/black_email"
+        />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/profile_username"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/peach_puff"
-        android:layout_marginStart="20dp"
-        android:text="Email: mahmud.farhan1903@gmail.com"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/profile_email_logo"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"
+        android:text="mahmud.farhan1903@gmail.com"
         android:fontFamily="@font/aller_bd"
         android:id="@+id/profile_email"
         android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/profile_email"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/favorite_users"
+        android:src="@drawable/name_logo"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:id="@+id/favorite_users_button"
+        android:layout_below="@id/profile_email"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/favorite_users"
+        android:text="@string/favorite_users"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/favorite_users_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Log out"
+        android:id="@+id/logout_btn"
+        app:cornerRadius="15dp"
+        android:background="@drawable/gradient"
+        app:backgroundTint="@null"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logout40"
+        android:layout_below="@id/favorite_users"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/logout_btn"
+        android:layout_marginStart="-50dp" />
+
 
 </RelativeLayout>

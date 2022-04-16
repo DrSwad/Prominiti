@@ -7,4 +7,5 @@
     <string name="signup_underline"><u>Sign Up</u></string>
     <string name="sign_in">Sign in</string>
     <string name="name">Name</string>
+    <string name="favorite_users"><u>Favorite Users</u></string>
 </resources>
