@@ -1,4 +1,4 @@
-package com.example.prominiti
+package com.example.prominitiAccount
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.prominiti
+package com.example.prominitiAccount
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

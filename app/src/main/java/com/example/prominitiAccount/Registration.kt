@@ -1,7 +1,6 @@
-package com.example.prominiti
+package com.example.prominitiAccount
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText

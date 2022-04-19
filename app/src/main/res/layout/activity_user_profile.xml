@@ -109,14 +109,5 @@
         app:backgroundTint="@null"
         />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logout40"
-        android:layout_below="@id/favorite_users"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@id/logout_btn"
-        android:layout_marginStart="-50dp" />
-
 
 </RelativeLayout>

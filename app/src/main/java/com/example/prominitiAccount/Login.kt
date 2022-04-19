@@ -1,4 +1,4 @@
-package com.example.prominiti
+package com.example.prominitiAccount
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import com.example.prominitiTask.TaskList
 
 class Login : AppCompatActivity()  {
     //UI attributes
@@ -41,9 +42,8 @@ class Login : AppCompatActivity()  {
 
         //This code is just for testing purposes
         logoImage.setOnClickListener{
-            val intent = Intent(this, UserProfile::class.java)
+            val intent = Intent(this, TaskList::class.java)
             startActivity(intent)
-            finish()
         }
 
     }
