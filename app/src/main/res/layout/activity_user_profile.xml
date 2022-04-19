@@ -94,7 +94,7 @@
         android:layout_marginStart="5dp"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="200dp"
@@ -104,10 +104,11 @@
         android:layout_marginTop="50dp"
         android:text="Log out"
         android:id="@+id/logout_btn"
+        app:icon="@drawable/ic_download__1_"
+        app:iconGravity="textEnd"
         app:cornerRadius="15dp"
         android:background="@drawable/gradient"
-        app:backgroundTint="@null"
-        />
+        app:backgroundTint="@null" />
 
 
 </RelativeLayout>

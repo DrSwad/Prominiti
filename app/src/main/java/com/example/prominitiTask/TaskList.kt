@@ -6,14 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.TransitionManager
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prominitiAccount.R
+import com.example.prominitiAccount.UserProfile
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_task_list.*
 import kotlinx.android.synthetic.main.delelte_alert_layout.*
+import kotlinx.android.synthetic.main.task_alert_layout.*
 
 class TaskList : AppCompatActivity(), TaskListAdapter.onItemClickListener {
     private lateinit var customLayoutManager: RecyclerView.LayoutManager
@@ -32,10 +38,44 @@ class TaskList : AppCompatActivity(), TaskListAdapter.onItemClickListener {
         recyclerView.adapter = customAdapter
 
         val addTask: FloatingActionButton = findViewById(R.id.task_add_button)
-        task_add_button.setOnClickListener{
-            intent = Intent(this, LocationTask::class.java)
-            startActivity(intent)
-            finish()
+        addTask.setOnClickListener{
+            val mDialogView = LayoutInflater.from(this).inflate(R.layout.task_alert_layout, null)
+            val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Type Selection")
+            val mAlertDialog = mBuidler.show()
+
+            mAlertDialog.select_time.setOnClickListener {
+                val intent = Intent(this, TimeTask::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+
+            mAlertDialog.select_location.setOnClickListener {
+                val intent = Intent(this, LocationTask::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.test_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.bot_task -> {
+                return true
+            }
+            R.id.bot_profile-> {
+                intent = Intent(this, UserProfile::class.java)
+                startActivity(intent)
+                finish()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

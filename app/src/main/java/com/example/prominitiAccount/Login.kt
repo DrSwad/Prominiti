@@ -37,15 +37,10 @@ class Login : AppCompatActivity()  {
         }
 
         loginButton.setOnClickListener{
-           login()
-        }
-
-        //This code is just for testing purposes
-        logoImage.setOnClickListener{
+            login()
             val intent = Intent(this, TaskList::class.java)
             startActivity(intent)
         }
-
     }
 
     public fun getEmailOrUserName():String {
@@ -70,5 +65,6 @@ class Login : AppCompatActivity()  {
         setPassword(passwordField.text.toString())
 
         //The rest is to be coded here
+
     }
 }

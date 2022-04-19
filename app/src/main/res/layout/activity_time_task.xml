@@ -9,10 +9,10 @@
     tools:context="com.example.prominitiTask.TimeTask">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:id="@+id/time_clock"
         android:src="@drawable/timeclock">
     </de.hdodenhof.circleimageview.CircleImageView>
@@ -22,7 +22,7 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         app:boxBackgroundMode="filled"
@@ -52,7 +52,7 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         app:boxBackgroundMode="filled"
@@ -76,10 +76,59 @@
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TimePicker
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/time_pick_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time_description"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
+        android:text="Select time"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_below="@id/time_description"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_pick_button"
+        android:id="@+id/time_picker"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp"
+        android:text="Date: 1 April, 2001"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_picker"
+        android:id="@+id/time_shower"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp"
+        android:text="Time: 23:45"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/black"/>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/time_add"
+        android:layout_below="@id/time_shower"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Make Task Changes"
+        app:icon="@drawable/add_black"
+        app:iconGravity="textEnd"
+        app:cornerRadius="20dp"
+        android:background="@drawable/gradient"
+        app:backgroundTint="@null"/>
 
 </RelativeLayout>

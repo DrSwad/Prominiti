@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Prominiti">
         <activity android:name="com.example.prominitiTask.LocationTask"></activity>
         <activity android:name="com.example.prominitiTask.TimeTask" />
-        <activity android:name="com.example.prominitiTask.TaskList" />
+        <activity android:name="com.example.prominitiTask.TaskList"
+            android:theme="@style/Theme.custom"/>
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -21,7 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserProfile" />
+        <activity android:name=".UserProfile"
+            android:theme="@style/Theme.custom"/>
         <activity
             android:name=".Login"
             android:exported="true" />

@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/task_add_button"
         android:src="@drawable/add_black"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         app:backgroundTint="@color/gold">

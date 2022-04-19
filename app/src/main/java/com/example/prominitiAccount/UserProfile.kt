@@ -3,9 +3,13 @@ package com.example.prominitiAccount
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.TextView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
+import com.example.prominitiTask.TaskList
 
 class UserProfile : AppCompatActivity() {
     private lateinit var logoutButton: MaterialButton
@@ -24,11 +28,12 @@ class UserProfile : AppCompatActivity() {
 
         logoutButton = findViewById(R.id.logout_btn)
         favoriteUserButton = findViewById(R.id.favorite_users_button)
+
         profileName = findViewById(R.id.profile_name)
         profileUsername = findViewById(R.id.profile_username)
         profileEmail = findViewById(R.id.profile_email)
 
-        //Set the texts accordingly from the data from the database
+        //Set the values accordingly from the data from the database
 
 
         //logout functionality
@@ -39,7 +44,27 @@ class UserProfile : AppCompatActivity() {
         favoriteUserButton.setOnClickListener {
             val intent = Intent(this, FavoriteUsers::class.java)
             startActivity(intent)
-            finish()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.test_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.bot_task -> {
+                intent = Intent(this, TaskList::class.java)
+                startActivity(intent)
+                finish()
+                return true
+            }
+            R.id.bot_profile-> {
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
