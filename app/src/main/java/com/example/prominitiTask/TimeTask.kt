@@ -9,10 +9,13 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import android.content.Intent
 import android.os.Build
+import android.view.LayoutInflater
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_time_task.*
+import kotlinx.android.synthetic.main.al_layout.*
 import java.util.*
 
 class TimeTask : AppCompatActivity(), TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
@@ -156,5 +159,16 @@ class TimeTask : AppCompatActivity(), TimePickerDialog.OnTimeSetListener, DatePi
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis,
             AlarmManager.INTERVAL_DAY ,pendingIntent)
+    }
+
+    private fun showDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.favorite_user_alert_layout, null)
+        val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Reminder")
+        val mAlertDialog = mBuidler.show()
+
+        mAlertDialog.okbtn.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
     }
 }

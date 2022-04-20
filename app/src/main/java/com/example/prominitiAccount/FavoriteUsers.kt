@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.al_layout.*
 import kotlinx.android.synthetic.main.delelte_alert_layout.*
 import kotlinx.android.synthetic.main.favorite_user_alert_layout.view.*
 
@@ -104,5 +105,16 @@ class FavoriteUsers : AppCompatActivity(), FavoriteUserAdapter.onContentClicklis
             userList += user
         }
         return userList
+    }
+
+    private fun showDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.favorite_user_alert_layout, null)
+        val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Reminder")
+        val mAlertDialog = mBuidler.show()
+
+        mAlertDialog.okbtn.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
     }
 }

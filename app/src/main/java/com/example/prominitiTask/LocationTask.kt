@@ -5,9 +5,11 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.ListAdapter
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.example.prominitiAccount.R
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -16,6 +18,7 @@ import com.google.android.gms.tasks.Task
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.al_layout.*
 
 class LocationTask : AppCompatActivity() {
 
@@ -90,6 +93,17 @@ class LocationTask : AppCompatActivity() {
 
                 //
             }
+        }
+    }
+
+    private fun showDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.favorite_user_alert_layout, null)
+        val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Reminder")
+        val mAlertDialog = mBuidler.show()
+
+        mAlertDialog.okbtn.setOnClickListener {
+            mAlertDialog.dismiss()
         }
     }
 }

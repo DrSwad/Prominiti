@@ -2,11 +2,14 @@ package com.example.prominitiAccount
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.example.prominitiTask.TaskList
+import kotlinx.android.synthetic.main.al_layout.*
 
 class Login : AppCompatActivity()  {
     //UI attributes
@@ -66,5 +69,16 @@ class Login : AppCompatActivity()  {
 
         //The rest is to be coded here
 
+    }
+
+    private fun showDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.favorite_user_alert_layout, null)
+        val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Reminder")
+        val mAlertDialog = mBuidler.show()
+
+        mAlertDialog.okbtn.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
     }
 }

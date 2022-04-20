@@ -18,6 +18,7 @@ import com.example.prominitiAccount.UserProfile
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_task_list.*
+import kotlinx.android.synthetic.main.al_layout.*
 import kotlinx.android.synthetic.main.delelte_alert_layout.*
 import kotlinx.android.synthetic.main.task_alert_layout.*
 
@@ -133,5 +134,16 @@ class TaskList : AppCompatActivity(), TaskListAdapter.onItemClickListener {
         }
 
         return tasks
+    }
+
+    private fun showDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.favorite_user_alert_layout, null)
+        val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Reminder")
+        val mAlertDialog = mBuidler.show()
+
+        mAlertDialog.okbtn.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
     }
 }

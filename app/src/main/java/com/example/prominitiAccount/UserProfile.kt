@@ -3,13 +3,16 @@ package com.example.prominitiAccount
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
 import com.example.prominitiTask.TaskList
+import kotlinx.android.synthetic.main.al_layout.*
 
 class UserProfile : AppCompatActivity() {
     private lateinit var logoutButton: MaterialButton
@@ -85,5 +88,16 @@ class UserProfile : AppCompatActivity() {
 
     public fun logout() {
         // This function is to be implemented by the server
+    }
+
+    private fun showDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.favorite_user_alert_layout, null)
+        val mBuidler = AlertDialog.Builder(this).setView(mDialogView).setTitle("Reminder")
+        val mAlertDialog = mBuidler.show()
+
+        mAlertDialog.okbtn.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
     }
 }

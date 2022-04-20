@@ -25,7 +25,5 @@ class AlertReceiver: BroadcastReceiver() {
 
         val notificationManager = NotificationManagerCompat.from(p0)
         notificationManager.notify(123, builder.build())
-
-
     }
 }
