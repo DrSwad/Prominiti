@@ -1,17 +1,25 @@
 package com.example.prominitiTask
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.ListAdapter
+import androidx.core.app.ActivityCompat
 import com.example.prominitiAccount.R
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.tasks.Task
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class LocationTask : AppCompatActivity() {
+
+    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
     private lateinit var locTitle: TextInputEditText
     private lateinit var locDescription: TextInputEditText
@@ -25,6 +33,8 @@ class LocationTask : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.actvity_location_task)
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
         locTitle = findViewById(R.id.loc_title_editText)
         locDescription = findViewById(R.id.loc_descrption_editText)
@@ -42,6 +52,7 @@ class LocationTask : AppCompatActivity() {
             val descrption: String = locDescription.text.toString()
             val distance: String = locDistance.text.toString()
             val targetUser: String = userDropDown.text.toString()
+            fetchPermission()
 
             addLocationTask()
             val intent = Intent(this, TaskList::class.java)
@@ -59,5 +70,26 @@ class LocationTask : AppCompatActivity() {
 
     fun addLocationTask() {
         // This is to be implemented
+    }
+
+    private fun fetchPermission(){
+        val task:Task<Location> = fusedLocationProviderClient.lastLocation
+
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+        != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 101)
+            return
+        }
+
+        task.addOnSuccessListener {
+            if(it != null) {
+                val latitude: String = it.latitude.toString()
+                val longitude: String = it.longitude.toString()
+
+                //
+            }
+        }
     }
 }
